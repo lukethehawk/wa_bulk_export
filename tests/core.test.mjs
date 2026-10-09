@@ -35,7 +35,7 @@ test('halts on repeated full page and avoids infinite loops', async () => {
 });
 
 test('preserves text and rejects unsafe ZIP filename characters', () => {
-  assert.equal(safeFilename('A/B:*?"<>|'), 'A_B______');
+  assert.equal(safeFilename('A/B:*?"<>|'), 'A_B_______');
   const text = renderText({name:'Mario', id:'123'}, [normalizeMessage(msg('1', 1700000000, 'Ciao\ncome va?'))]);
   assert.match(text, /Ciao\ncome va\?/);
 });
