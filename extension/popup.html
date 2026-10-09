@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WA Bulk Export</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>WA Bulk Export</h1>
+      <p>Esportazione locale di tutte le chat</p>
+    </header>
+    <div class="panel">
+      <p id="message" role="status">Connessione a WhatsApp Web...</p>
+      <p id="chat" class="muted" aria-live="polite"></p>
+      <div class="track"><div id="progress"></div></div>
+      <div class="stats">
+        <span id="counter">0 / 0 chat</span>
+        <span id="count">0 messaggi</span>
+      </div>
+      <p id="errors" class="warning" hidden></p>
+    </div>
+    <button id="start" disabled>Esporta tutte le chat</button>
+    <button id="cancel" class="secondary" hidden>Annulla</button>
+    <p class="notice">Crea un unico ZIP con TXT e JSON di tutte le conversazioni disponibili, anche archiviate. Foto, video e file non sono inclusi. Non carica dati su server esterni.</p>
+    <p id="hint" class="muted"></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
