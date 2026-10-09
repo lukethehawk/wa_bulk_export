@@ -1,0 +1,22 @@
+{
+  "name": "wa-bulk-export",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bulk WhatsApp Web chat export for Firefox (local, open source).",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "package": "node scripts/build.mjs --package",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@wppconnect/wa-js": "4.6.1",
+    "fflate": "0.8.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
