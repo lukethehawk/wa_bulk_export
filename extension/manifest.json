@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "WA Bulk Export",
+  "version": "0.1.0",
+  "description": "Esporta in blocco le chat WhatsApp Web in un archivio ZIP locale.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wa-bulk-export@lukethehawk.github.io",
+      "strict_min_version": "128.0"
+    }
+  },
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["vendor/wppconnect-wa.js", "page.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "WA Bulk Export",
+    "default_popup": "popup.html"
+  }
+}
